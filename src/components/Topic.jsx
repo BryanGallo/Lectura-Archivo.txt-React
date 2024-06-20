@@ -4,7 +4,6 @@ import { addStartTime } from "../helpers/time.js";
 const Topic = ({ talks }) => {
     const hourLunch = "12:00 PM";
     const hourEvent = "17:00 PM";
-    console.log(talks);
     return (
         <div>
             <h2 className="mb-2 text-lg font-semibold">

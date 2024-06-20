@@ -7,7 +7,6 @@ const Form = ({ file, setFile, readFile }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(file);
         if (!file) {
             alert("Carga un archivo");
             return;

@@ -9,13 +9,10 @@ const useForm = () => {
 
     //Lectura Archivo
     const readFile = (file) => {
-        console.log(file);
         const reader = new FileReader();
         reader.onload = (e) => {
             const fileContent = e.target.result;
-            console.log(fileContent);
             const matches = fileContent.match(/(.+?) (\d+min)/g);
-            console.log(matches);
             if (matches) {
                 if (matches.length >= 24)
                     return alert(
@@ -23,7 +20,6 @@ const useForm = () => {
                     );
                 const topics = matches.map((match) => {
                     const parts = match.match(/(.+?) (\d+min)/);
-                    console.log(parts);
                     return {
                         title: parts[1].trim(),
                         duration: parseInt(
@@ -32,13 +28,10 @@ const useForm = () => {
                         ),
                     };
                 });
-                console.log(topics);
 
                 const newTopics = randomTopics(topics);
-                console.log(newTopics);
 
                 const sessions = distributeTopics(newTopics);
-                console.log(sessions);
                 if (sessions.morningSession) {
                 }
                 sessions.morningTopic = [
