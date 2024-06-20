@@ -118,7 +118,7 @@ const useForm = () => {
         };
     };
 
-    return { file, setFile, readFile };
+    return { file, setFile, readFile, talks };
 };
 
 export default useForm;

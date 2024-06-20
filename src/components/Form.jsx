@@ -12,7 +12,7 @@ const Form = ({ file, setFile, readFile }) => {
             alert("Carga un archivo");
             return;
         }
-        readFile(file)
+        readFile(file);
     };
 
     return (
@@ -45,15 +45,6 @@ const Form = ({ file, setFile, readFile }) => {
                     />
                 </div>
             </form>
-            <div className=" w-8/12 mx-auto bg-white text-black p-4 rounded-md">
-                <h2 className="mb-2 text-lg font-semibold">
-                    Horario en la mañana:
-                </h2>
-
-                <h2 className="mb-2 text-lg font-semibold">
-                    Horario en la tarde:
-                </h2>
-            </div>
         </>
     );
 };
