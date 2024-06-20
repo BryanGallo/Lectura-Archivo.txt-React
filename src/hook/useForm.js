@@ -11,6 +11,22 @@ const useForm = () => {
             console.log(fileContent);
             const matches = fileContent.match(/(.+?) (\d+min)/g);
             console.log(matches);
+            if (matches) {
+                const topics = matches.map((match) => {
+                    const parts = match.match(/(.+?) (\d+min)/);
+                    console.log(parts);
+                    return {
+                        title: parts[1].trim(),
+                        duration: parseInt(
+                            parts[2].replace("min", "").trim(),
+                            10
+                        ),
+                    };
+                });
+                console.log(topics);
+            } else {
+                alert("No se encontraron coincidencias en el archivo.");
+            }
         };
 
         reader.readAsText(file);
