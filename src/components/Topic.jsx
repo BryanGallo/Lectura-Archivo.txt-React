@@ -25,7 +25,7 @@ const Topic = ({ talks }) => {
                 Horario en la tarde:
             </h2>{" "}
             {talks.afternoonTopic.length > 0 ? (
-                addStartTime(talks.morningTopic, 13).map((talk, index) => (
+                addStartTime(talks.afternoonTopic, 13).map((talk, index) => (
                     <p key={index}>
                         {talk.duration !== 0
                             ? `${talk.startTime} - ${talk.title} - ${talk.duration}min`

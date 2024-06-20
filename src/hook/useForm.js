@@ -17,6 +17,10 @@ const useForm = () => {
             const matches = fileContent.match(/(.+?) (\d+min)/g);
             console.log(matches);
             if (matches) {
+                if (matches.length >= 24)
+                    return alert(
+                        "El achivo no puede tener mas de 24 sesiones al día"
+                    );
                 const topics = matches.map((match) => {
                     const parts = match.match(/(.+?) (\d+min)/);
                     console.log(parts);
