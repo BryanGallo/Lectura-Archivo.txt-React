@@ -19,7 +19,7 @@ const Form = ({ file, setFile, readFile }) => {
         <>
             <form onSubmit={handleSubmit}>
                 <h2 className="text-emerald-600 font-black text-4xl max-sm:text-3xl text-center capitalize my-10">
-                    Carga tu archivo de Topic de Conferencia
+                    Carga tu Topic de Conferencia
                 </h2>
                 <div className="mb-4">
                     <label className="block text-center text-xs sm:text-sm md:text-lg overflow-hidden">
