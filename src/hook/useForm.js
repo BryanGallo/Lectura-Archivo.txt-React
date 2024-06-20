@@ -34,6 +34,25 @@ const useForm = () => {
 
                 const sessions = distributeTopics(newTopics);
                 console.log(sessions);
+                if (sessions.morningSession) {
+                }
+                sessions.morningTopic = [
+                    ...sessions.morningTopic,
+                    {
+                        title: "LUNCH",
+                        duration: 0,
+                    },
+                ];
+
+                sessions.afternoonTopic = [
+                    ...sessions.afternoonTopic,
+                    {
+                        title: "SOCIAL EVENT",
+                        duration: 0,
+                    },
+                ];
+
+                setTalks(sessions);
             } else {
                 alert("No se encontraron coincidencias en el archivo.");
             }
