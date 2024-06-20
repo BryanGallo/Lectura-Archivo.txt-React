@@ -27,7 +27,7 @@ const Form = ({ file, setFile, readFile }) => {
                             accept=".txt"
                             onChange={handleUpload}
                             name="txt"
-                            className="text-md text-slate-500 bg-slate-100 rounded-md p-4
+                            className="text-md text-slate-500 bg-slate-100 rounded-md p-4 cursor-pointer
                                 file:mr-4 file:py-2 file:px-4
                                 file:rounded-full file:border-0
                                 file:text-md file:font-semibold
