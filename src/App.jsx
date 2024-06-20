@@ -2,10 +2,10 @@ import Form from "./components/Form";
 import useForm from "./hook/useForm";
 
 export default function App() {
-    const { file } = useForm();
+    const { file, setFile } = useForm();
     return (
         <main>
-            <Form file={file} />
+            <Form file={file} setFile={setFile} />
         </main>
     );
 }
