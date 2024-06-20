@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = () => {
+const Form = ({file}) => {
     return (
         <form>
             <h2 className="text-emerald-600 font-black text-4xl max-sm:text-3xl text-center capitalize my-10">
