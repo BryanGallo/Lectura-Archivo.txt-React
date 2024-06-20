@@ -1,13 +1,23 @@
 import React from "react";
 
-const Form = ({ file, setFile }) => {
+const Form = ({ file, setFile, readFile }) => {
     const handleUpload = (e) => {
         setFile(e.target.files[0]);
     };
-    
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(file);
+        if (!file) {
+            alert("Carga un archivo");
+            return;
+        }
+        readFile(file)
+    };
+
     return (
         <>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h2 className="text-emerald-600 font-black text-4xl max-sm:text-3xl text-center capitalize my-10">
                     Carga tu archivo de Topic de Conferencia
                 </h2>

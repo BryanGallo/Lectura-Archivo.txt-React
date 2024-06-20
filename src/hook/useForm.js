@@ -2,7 +2,14 @@ import { useState } from "react";
 
 const useForm = () => {
     const [file, setFile] = useState(null);
-    return { file, setFile };
+
+    const readFile =  (file) => {
+        console.log(file);
+    };
+
+
+    return { file, setFile,readFile };
+    
 };
 
 export default useForm;
