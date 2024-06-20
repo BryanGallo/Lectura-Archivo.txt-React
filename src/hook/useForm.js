@@ -24,12 +24,23 @@ const useForm = () => {
                     };
                 });
                 console.log(topics);
+
+                const newTopics = randomTopics(topics);
+                console.log(newTopics);
             } else {
                 alert("No se encontraron coincidencias en el archivo.");
             }
         };
 
         reader.readAsText(file);
+    };
+
+    const randomTopics = (topics) => {
+        for (let i = topics.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [topics[i], topics[j]] = [topics[j], topics[i]];
+        }
+        return topics;
     };
 
     return { file, setFile, readFile };
