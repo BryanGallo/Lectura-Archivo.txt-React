@@ -4,12 +4,12 @@ import { addStartTime } from "../helpers/time.js";
 const Topic = ({ talks }) => {
     const hourLunch = "12:00 PM";
     const hourEvent = "17:00 PM";
-
+    console.log(talks);
     return (
-        <div className=" w-8/12 mx-auto bg-white text-black p-4 rounded-md">
+        <div>
             <h2 className="mb-2 text-lg font-semibold">
                 Horario en la mañana:
-            </h2>
+            </h2>{" "}
             {talks.morningTopic.length > 0 ? (
                 addStartTime(talks.morningTopic, 9).map((talk, index) => (
                     <p key={index}>
@@ -21,19 +21,20 @@ const Topic = ({ talks }) => {
             ) : (
                 <p>No hay Charlas en la mañana.</p>
             )}
-
-            {/* <h2 className="mb-2 text-lg font-semibold">Horario en la tarde:</h2>
+            <h2 className="mb-2 text-lg font-semibold">
+                Horario en la tarde:
+            </h2>{" "}
             {talks.afternoonTopic.length > 0 ? (
-                talks.afternoonTopic.map((talk, index) => (
+                addStartTime(talks.morningTopic, 13).map((talk, index) => (
                     <p key={index}>
                         {talk.duration !== 0
-                            ? `tiempo - ${talk.title} - ${talk.duration}min`
-                            : `tiempo - ${talk.title}`}
+                            ? `${talk.startTime} - ${talk.title} - ${talk.duration}min`
+                            : `${hourEvent}- ${talk.title}`}
                     </p>
                 ))
             ) : (
-                <p>No hay sesiones en la mañana.</p>
-            )} */}
+                <p>No hay Charlas en la tarde.</p>
+            )}
         </div>
     );
 };

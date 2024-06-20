@@ -1,5 +1,5 @@
 import Form from "./components/Form";
-import Topic from "./components/Topic";
+import Topics from "./components/Topics";
 import useForm from "./hook/useForm";
 
 export default function App() {
@@ -7,7 +7,7 @@ export default function App() {
     return (
         <main>
             <Form file={file} setFile={setFile} readFile={readFile} />
-            <Topic talks={talks} />
+            <Topics talks={talks} />
         </main>
     );
 }
