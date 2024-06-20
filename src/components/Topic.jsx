@@ -1,6 +1,8 @@
 import React from "react";
 
 const Topic = ({ talks }) => {
+
+
     return (
         <div className=" w-8/12 mx-auto bg-white text-black p-4 rounded-md">
             <h2 className="mb-2 text-lg font-semibold">

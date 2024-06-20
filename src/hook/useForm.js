@@ -7,6 +7,7 @@ const useForm = () => {
         afternoonTopic: [],
     });
 
+    //Lectura Archivo
     const readFile = (file) => {
         console.log(file);
         const reader = new FileReader();
@@ -61,6 +62,7 @@ const useForm = () => {
         reader.readAsText(file);
     };
 
+    //Generando Topics Randoms
     const randomTopics = (topics) => {
         for (let i = topics.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -69,6 +71,7 @@ const useForm = () => {
         return topics;
     };
 
+    //Generando Topics hasta usar todo el tiempo disponible
     const distributeTopics = (topics) => {
         const morningTopicsLimit = 180; // 9 AM to 12 PM  = 180 minutes
         const afternoonTopicsLimit = 240; // 1 PM to 5 PM = 240 minutes
@@ -116,6 +119,19 @@ const useForm = () => {
             morningTopic,
             afternoonTopic,
         };
+    };
+
+    const useAvailableTime = (timeLimit, talks) => {
+        let session = [];
+        let remainingTime = timeLimit;
+
+        for (const talk of talks) {
+            if (remainingTime >= talk.duration) {
+                session.push(talk);
+                remainingTime -= talk.duration;
+            }
+        }
+        return session;
     };
 
     return { file, setFile, readFile, talks };
